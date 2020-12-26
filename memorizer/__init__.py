@@ -21,7 +21,13 @@ def sampleWordsFromFile(path, sampleCount):
 
 def startGame(words):
     print('Game is starting! Write your answer and press enter.')
+    mistakes = iterate(words)
+    while (len(mistakes) != 0):
+        mistakes = iterate(mistakes)
+
+def iterate(words):
     console = fileinput.input('-')
+    mistakes = []
     for word in words:
         german = word['word']
         meaning = word['meaning']
@@ -30,7 +36,10 @@ def startGame(words):
         if (equals(answer, meaning)):
             print("Your'e answer is correct!")
         else:
+            mistakes.append(word)
             print(f'Wrong! The correct answer is: {meaning}')
+    console.close()
+    return mistakes
 
 def equals(first, second):
     return first.lower().strip() == second.lower().strip()
