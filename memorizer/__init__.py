@@ -6,8 +6,10 @@ import fileinput
 
 def run():
     parser = ArgumentParser(prog='memorizer')
-    parser.add_argument('--path', type=Path)
-    parser.add_argument('--count', type=int)
+    parser.add_argument('--path', type=Path, help='''path to a json file 
+    containing words and their meanings''')
+    parser.add_argument('--count', type=int, help='''count of words 
+    to be randomly sampled from the file and presented as questions''')
     args = parser.parse_args()
     sampledWords = sampleWordsFromFile(args.path, args.count)
     startGame(sampledWords)
