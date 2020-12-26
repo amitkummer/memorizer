@@ -25,8 +25,10 @@ def startGame(words):
         meaning = word["meaning"]
         print(f"What is the English word for the word: {german}?")
         answer = console.readline()
-        answer = answer.lower().strip()
-        if (answer == meaning.strip().lower()):
+        if (equals(answer, meaning)):
             print("Your'e answer is correct!")
         else:
             print(f"Wrong! The correct answer is: {meaning}")
+
+def equals(first, second):
+    return first.lower().strip() == second.lower().strip()
