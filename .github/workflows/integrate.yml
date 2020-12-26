@@ -1,0 +1,30 @@
+name: Integrate
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+        
+    - name: Version Check
+      run: python --version
+      
+    - name: Install Poetry
+      run: pip3 install poetry
+    
+    - name: Configure Poetry
+      run: poetry config virtualenvs.create false
+    
+    - name: Install Dependencies
+      run: poetry install
+
+    - name: Spawn environment shell
+      run: poetry shell
+
+    - name: Run tests
+      run: pytest
