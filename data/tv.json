@@ -25,7 +25,7 @@
     },
     {
         "word": "Flankenschutz",
-        "meaning": "Flank potection"
+        "meaning": "Flank protection"
     },
     {
         "word": "Hilfe",
@@ -116,7 +116,147 @@
         "meaning": "department"
     },
     {
-        "word": "Aufgabe",
-        "meaning": "task"
+        "word": "Verwaltung",
+        "meaning": "administartion"
+    },
+    {
+        "word": "Zivil",
+        "meaning": "civil"
+    },
+    {
+        "word": "zerstören",
+        "meaning": "destroy"
+    },
+    {
+        "word": "beansprucht",
+        "meaning": "claimed"
+    },
+    {
+        "word": "kontrollier",
+        "meaning": "control"
+    },
+    {
+        "word": "überwiegend",
+        "meaning": "predominant"
+    },
+    {
+        "word": "Gegend",
+        "meaning": "area"
+    },
+    {
+        "word": "ost",
+        "meaning": "east"
+    },
+    {
+        "word": "Siedlung",
+        "meaning": "settlement"
+    },
+    {
+        "word": "roten Dächer",
+        "meaning": "red roofs"
+    },
+    {
+        "word": "erheben",
+        "meaning": "raise"
+    },
+    {
+        "word": "willkommen",
+        "meaning": "welcome"
+    },
+    {
+        "word": "Wort",
+        "meaning": "word"
+    },
+    {
+        "word": "rufen",
+        "meaning": "shout"
+    },
+    {
+        "word": "wohnen",
+        "meaning": "live"
+    },
+    {
+        "word": "Schafe",
+        "meaning": "sheep"
+    },
+    {
+        "word": "weiden",
+        "meaning": "graze"
+    },
+    {
+        "word": "dazwischen",
+        "meaning": "between"
+    },
+    {
+        "word": "Schutt",
+        "meaning": "rubble"
+    },
+    {
+        "word": "türmen",
+        "meaning": "pile up"
+    },
+    {
+        "word": "dritten Hauses",
+        "meaning": "third house"
+    },
+    {
+        "word": "Nähe",
+        "meaning": "the proximity"
+    },
+    {
+        "word": "Nachmittag",
+        "meaning": "afternoon"
+    },
+    {
+        "word": "später",
+        "meaning": "later"
+    },
+    {
+        "word": "Einschnitt",
+        "meaning": "incision"
+    },
+    {
+        "word": "Sicherheit",
+        "meaning": "security"
+    },
+    {
+        "word": "Mauer",
+        "meaning": "wall"
+    },
+    {
+        "word": "bedeuten",
+        "meaning": "mean"
+    },
+    {
+        "word": "Hügel",
+        "meaning": "hill"
+    },
+    {
+        "word": "Existenz",
+        "meaning": "existence"
+    },
+    {
+        "word": "bedrohen",
+        "meaning": "threat"
+    },
+    {
+        "word": "Grenzwalls",
+        "meaning": "seperation wall"
+    },
+    {
+        "word": "israelischen",
+        "meaning": "israeli"
+    },
+    {
+        "word": "Vollendung",
+        "meaning": "completion"
+    },
+    {
+        "word": "Endug",
+        "meaning": "ending"
+    },
+    {
+        "word": "Voll",
+        "meaning": "full"
     }
 ]
