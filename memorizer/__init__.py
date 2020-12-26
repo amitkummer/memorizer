@@ -15,7 +15,7 @@ def run():
     startGame(sampledWords)
 
 def sampleWordsFromFile(path, sampleCount):
-    with path.open() as wordsFile:
+    with path.open(encoding='UTF-8') as wordsFile:
         words = json.load(wordsFile)
         return random.sample(words, sampleCount)
 
