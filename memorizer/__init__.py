@@ -12,14 +12,12 @@ console = Console()
 
 def run():
     parser = ArgumentParser(prog='memorizer')
-    parser.add_argument('--path', type=Path, help='''path to a json file 
-    containing words and their meanings''')
-    parser.add_argument('--count', type=int, help='''count of words 
-    to be randomly sampled from the file and presented as questions''')
+    parser.add_argument('--path', type=Path, required=True,
+        help='Path to a json file containing words and their meanings')
+    parser.add_argument('--count', type=int, help='''Count of words 
+    to be randomly sampled from the file and presented as questions.
+    If ommitted all words in file will be picked.''')
     args = parser.parse_args()
-    if (args.path == None):
-        parser.print_help()
-        sys.exit(0)
     sampledWords = sampleWordsFromFile(args.path, args.count)
     startGame(sampledWords)
 
