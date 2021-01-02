@@ -9,6 +9,7 @@ memorizer = 'memorizer:run'
 
 [tool.poetry.dependencies]
 python = "^3.8"
+rich = "^9.6.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.0"
