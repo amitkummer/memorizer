@@ -17,12 +17,19 @@ def run():
     parser.add_argument('--count', type=int, help='''count of words 
     to be randomly sampled from the file and presented as questions''')
     args = parser.parse_args()
+    if (args.path == None):
+        parser.print_help()
+        sys.exit(0)
     sampledWords = sampleWordsFromFile(args.path, args.count)
     startGame(sampledWords)
 
 def sampleWordsFromFile(path, sampleCount):
     with path.open(encoding='UTF-8') as wordsFile:
         words = json.load(wordsFile)
+        if (sampleCount == None):
+            sampleCount = len(words)
+            console.print("Count argument wasn't specified: picking all words.",
+            style="cyan")
         if (len(words) < sampleCount):
             sampleCount = len(words)
             console.print('Warning: count argument is bigger than' +
