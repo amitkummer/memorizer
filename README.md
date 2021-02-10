@@ -15,7 +15,14 @@ poetry run memorizer --path data/test.json --count 3
 
 # Running The Tests
 
-Spawn a shell inside the poetry environment, then call pytest:
+Make sure to first download the dependencies using poetry:
+
+```sh
+pip install poetry
+poetry install
+```
+
+Then spawn a shell inside the poetry environment and call pytest:
 
 ```sh
 poetry shell
