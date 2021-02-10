@@ -19,7 +19,28 @@ def run():
     sampledWords = sampleWordsFromFile(args.path, args.count)
     startGame(sampledWords)
 
+def sampleWordsFromDir(path, sampleCount):
+    '''
+    Sample group is all words in files that are inside the directory @path.
+    '''
+    words = []
+    for file in path.iterdir():
+        if file.suffix == '.json':
+            with file.open(encoding='UTF-8') as file:
+                words.extend(json.load(file))
+    if (sampleCount == None):
+        sampleCount = len(words)
+    if (len(words) < sampleCount):
+        sampleCount = len(words)
+        console.print('Warning: count argument is bigger than' +
+        'words count in file. All words in file are picked.',
+        style="yellow")
+    return random.sample(words, sampleCount)
+    
 def sampleWordsFromFile(path, sampleCount):
+    '''
+    Sample group is all words in the file @path.
+    '''
     with path.open(encoding='UTF-8') as wordsFile:
         words = json.load(wordsFile)
         if (sampleCount == None):
@@ -29,8 +50,7 @@ def sampleWordsFromFile(path, sampleCount):
             console.print('Warning: count argument is bigger than' +
             'words count in file. All words in file are picked.',
             style="yellow")
-        return random.sample(words, sampleCount)
-            
+        return random.sample(words, sampleCount)        
 
 def startGame(words):
     console.print('✨ Welcome to Memorizer! ✨')
