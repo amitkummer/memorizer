@@ -27,3 +27,11 @@ def test_sample_size_bigger_than_dir_size():
     p = Path('tests').joinpath('data')
     result = memorizer.sampleWordsFromDir(p, 200)
     assert len(result) == 6
+
+def test_sampling_with_regex():
+    p = Path('./tests/data')
+    result = memorizer.sampleWordsFromDir(p, pattern='[1]+')
+    assert len(result) == 3
+    assert {'word': 'Einstieg', 'meaning': 'entry'} in result
+    assert {'word': 'als', 'meaning': 'than'} in result
+    assert {'word': 'dunkler', 'meaning': 'darker'} in result

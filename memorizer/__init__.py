@@ -3,6 +3,7 @@ from pathlib import Path
 import random
 import json
 import sys
+import re
 
 from rich.console import Console
 
@@ -14,23 +15,29 @@ def run():
         help='Path to a json file or folder with json files'
         + 'containing words and their meanings.')
     parser.add_argument('--count', type=int, help='''Count of words 
-    to be randomly sampled from the file and presented as questions.
-    If ommitted all words in file will be picked.''')
+        to be randomly sampled from the file and presented as questions.
+        If ommitted all words in file will be picked.''')
+    parser.add_argument('--pattern', type=str, help='''Regex pattern to
+        match files with. If there is a match with the file stem words
+        from the file will be picked. Applied only when path argument is
+        a directory.''')
     args = parser.parse_args()
     sampledWords = []
     if args.path.is_dir():
-        sampledWords = sampleWordsFromDir(args.path, args.count)
+        sampledWords = sampleWordsFromDir(args.path, args.count, args.pattern)
     else:
         sampledWords = sampleWordsFromFile(args.path, args.count)
     startGame(sampledWords)
 
-def sampleWordsFromDir(path, sampleCount):
+def sampleWordsFromDir(path, sampleCount=None, pattern=None):
     '''
     Sample group is all words in files that are inside the directory @path.
     '''
     words = []
     for file in path.iterdir():
         if file.suffix == '.json':
+            if pattern and not re.match(pattern, file.stem):
+                continue
             with file.open(encoding='UTF-8') as file:
                 words.extend(json.load(file))
     if (sampleCount == None):
@@ -42,7 +49,7 @@ def sampleWordsFromDir(path, sampleCount):
         style="yellow")
     return random.sample(words, sampleCount)
     
-def sampleWordsFromFile(path, sampleCount):
+def sampleWordsFromFile(path, sampleCount=None):
     '''
     Sample group is all words in the file @path.
     '''
