@@ -31,7 +31,8 @@ def run():
 
 def sampleWordsFromDir(path, sampleCount=None, pattern=None):
     '''
-    Sample group is all words in files that are inside the directory @path.
+    Sample group is all words in files that are inside the directory @pathת
+    and match with @pattern if provided.
     '''
     words = []
     for file in path.iterdir():
